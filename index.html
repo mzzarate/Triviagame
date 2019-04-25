@@ -1,49 +1,149 @@
 <!DOCTYPE html>
-<html lang='en'>
-
+<html>
 <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Trivia Game</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src='assets/javascript/app.js'></script>
-    <link rel='stylesheet' type='text/css' href='assets/css/style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Css link -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Bootstrap link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 </head>
-
 <body>
+    
+    <!-- Parent contianer -->
+    <div class="container text-center">
 
-    <div class='container'>
-        <h1>Trivia Game</h1>
+        <div class="container-1">
 
-        <div class='start'>
-            <p>Start</p>
+            <!-- Header of this game -->
+            <p> <h1 id="Htext"><bold> Name of Capitals Trivia Game</bold></h1> </p>
+
+            <!-- Button that will allow the game to start -->
+            <button type="button" class="btn btn-success btn-lg startingBtn">Start, good luck! :)</button> 
+            
+            <!-- This ID 'quiz' will contain the question and radio buttons -->
+            <div id="quiz">
+
+                <!-- This will display the timer -->
+                <div id="timer"></div>
+                    
+
+                <!-- Multiple Selection for answers -->
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <p id="question">1. What is the capital of Colombia ?</p>
+                        <input type="radio" class="form-check-input monk" name="Colombia"  value="Bogota">
+                        <span id="answer">Bogota</span>
+                        <input type="radio" class="form-check-input monk" name="Colombia  value="Cali">
+                        <span id="answer">Cali</span>
+                        <input type="radio" class="form-check-input monk" name="Colombia"  value="Medellin">
+                        <span id="answer">Medellin</span>
+                 
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <p id="question">2.What is the capital of the United States?</p>
+                        <input type="radio" class="form-check-input monk" name="United States"  value="Wasshington DC">
+                        <span id="answer">Washington DC</span>
+                        <input type="radio" class="form-check-input monk" name="United States"  value="New York">
+                        <span id="answer">New York</span>
+                        <input type="radio" class="form-check-input monk" name="United States"  value="Arizona">
+                        <span id="answer">Arizona</span>
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <p id="question">3.What is the capital of Mexico? </p>
+                        
+                        <input type="radio" class="form-check-input monk" name="Mexico"  value="Tijuana">
+                        <span id="answer">Tijuana</span>
+                        <input type="radio" class="form-check-input monk" name="Mexico"  value="Vera Cruz">
+                         <span id="answer">Vera Cruz</span>
+                         <input type="radio" class="form-check-input monk" name="Mexico"  value="Mexico DF">
+                         <span id="answer">Mexico DF</span>
+                      
+
+                    </label>
+                </div>
+
+                <div class="form-check">
+                        <label class="form-check-label">
+                            <p id="question">4. What is the capital of Cuba ?</p>
+                            
+                            <input type="radio" class="form-check-input monk" name="Cuba"  value="Havana">
+                            <span id="answer">Havana</span>
+                            <input type="radio" class="form-check-input monk" name="Cuba"  value="Barcelona">
+                            <span id="answer">Barcelona</span>
+                            <input type="radio" class="form-check-input monk" name="Cuba"  value="Barranquilla">
+                            <span id="answer">Barranquilla</span>
+                    
+    
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <p id="question">5.What is the capital of Puerto Rico?</p>
+                            
+                            <input type="radio" class="form-check-input monk" name="Puerto Rico"  value="San Juan">
+                            <span id="answer">San Juan</span>
+                            <input type="radio" class="form-check-input monk" name="Puerto Rico"  value="Ponce">
+                            <span id="answer">Ponce</span>
+                            <input type="radio" class="form-check-input monk" name="Puerto Rico"  value="Barceloneta">
+                            <span id="answer">Barceloneta</span>
+                        
+
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                    <label class="form-check-label">
+                        <p id="question">6. What is the capital of Domican Republic ? </p>
+                        
+                        <input type="radio" class="form-check-input monk" name="Dominican Republic"  value="Santo Domingo">
+                        <span id="answer">Santo Domingo</span>
+                        <input type="radio" class="form-check-input monk" name="Dominican Republic"  value="Cancun">
+                        <span id="answer">Cancun</span> 
+                        <input type="radio" class="form-check-input monk" name="Dominican Republic"  value="Neiva">
+                        <span id="answer">Neiva</span> 
+                
+
+                    </label>
+                </div>
+
+                
+
+
+            </div>
+            
+            <!-- Progress Shown -->
+            <div id="progress">
+                <h1>This your progress !</h1>
+                <h4>Correct Awnsers: <span id="correct"></span></h4>
+                <h4>Wrong Awnsers: <span id="wrong"></span></h4>
+                <h4>Unanswered questions: <span id="unanswered"></span></h4>
+            </div>
+
+           
+
         </div>
 
-        <form class='hide'>
+       
 
-            <p>Time Remaining:<span class='time-remaining'><span>seconds</span></span></p>
-
-            <p>What is the capital of Colombia?</p>
-
-                <input type='capital' name='question-1' value='Bogota' class='choice' id='Bogota'>Bogota
-                <input type='capital' name='question-1' value='Medellin' class='choice' id='Medellin'>Medellin
-                <input type='capital' name='question-1' value='Cali' class='choice' id='Cali'>Cali
-                <input type='capital' name='question-1' value='Barranquilla' class='choice' id='Barranquilla'>Barranquilla
-            
-            <p>What is the capital of United States?</p>
-
-                <input type='capital' name='question-2' value='New Jersey' class='choice'>New Jersey
-                <input type='capital' name='question-2' value='New York' class='choice'>New York
-                <input type='capital' name='question-2' value='Washington DC' class='choice' id='connecting-rod'>Washington DC
-                <input type='capital' name='question-2' value='Florida' class='choice'>Florida
-            
-            <p>What is the capital of Puerto Rico?</p>
-
-                <input type='capital' name='question-3' value='San Juan' class='choice' id='exhaust-gas'>San Juan
-                <input type='capital' name='question-3' value='Ponce' class='choice'>Ponce
-                <input type='capital' name='question-3' value='Maracaibo' class='choice'>Maracaibo
-                <input type='capital' name='question-3' value='Barceloneta' class='choice'>Barceloneta
-            
-        </form>
     </div>
-</body>
 
+   
+ <!-- JQUERY Reference -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Javascript reference -->
+    <script src="assets/javascript/app.js"></script>
+
+</body>
 </html>
